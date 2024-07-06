@@ -21,3 +21,5 @@ SWYT App developed on React TypeScript frontend and a Node.js JavaScript backend
 ## Installation
 
 1. Clone the repository:
+git clone https://github.com/Visanth-fullStack/swyt-app.git
+cd swyt-app
