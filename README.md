@@ -23,3 +23,8 @@ SWYT App developed on React TypeScript frontend and a Node.js JavaScript backend
 1. Clone the repository:
 git clone https://github.com/Visanth-fullStack/swyt-app.git
 2. cd swyt-app
+3. Install the dependencies:
+npm install
+4. Set up environment variables:
+Create a `.env` file in the `backend` directory with the following content:
+MONGODB_URI=mongodb://localhost:27017/products-listing
