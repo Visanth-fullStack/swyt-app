@@ -3,6 +3,8 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const path = require('path');
+const productRoutes = require('./src/routes/productRoutes');
+const errorHandler = require('./src/utils/errorHandler');
 
 const app = express();
 
@@ -21,9 +23,13 @@ mongoose.connect(process.env.MONGODB_URI, {
 .then(() => console.log('Connected to MongoDB'))
 .catch(err => console.error('MongoDB connection error:', err));
 
+require('./src/models/category');
+require('./src/models/product');
+
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use('/api/products', productRoutes);
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
